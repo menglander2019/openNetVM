@@ -4,7 +4,7 @@ on:
    types: [opened, synchronize]
 jobs:
   Branch:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20
     steps:
       # If Branch name is not develop, comment
       - name: Test Branch Name
@@ -13,7 +13,7 @@ jobs:
           echo 'Please PR on develop branch.'
           exit 1
   C:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20
     steps:
       # Clone Repository
       - name: Checkout
@@ -24,7 +24,7 @@ jobs:
          chmod +x style/run-lint.sh
          style/run-lint.sh c
   Cppcheck:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
          chmod +x style/run-lint.sh
          style/run-lint.sh cppcheck
   Python:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -52,7 +52,7 @@ jobs:
         chmod +x style/run-lint.sh
         style/run-lint.sh python
   Shell:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20
     steps:
       - name: Checkout
         uses: actions/checkout@v2
