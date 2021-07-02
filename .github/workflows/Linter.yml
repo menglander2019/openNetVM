@@ -6,7 +6,7 @@ jobs:
   Branch:
     runs-on: ubuntu-20
     steps:
-      # If Branch name is not develop, comment
+      # If Branch name is not develop, comment,
       - name: Test Branch Name
         if: github.base_ref != 'develop'
         run: |
